@@ -1,4 +1,15 @@
 const URL = "http://localhost:8080/users";
+
+const educations = (data) => {
+  $("ul").append(`<li class="education-section">
+  <p class="year">${data.year}</p>
+  <div class="education-detail">
+  <p>${data.title}</p>
+  <p>${data.description}></p>
+  </div>
+  </li>`);
+};
+
 const getEducationData = () => {
   fetch(`${URL}/1/educations`, {
     method: "GET",
@@ -13,16 +24,7 @@ const getEducationData = () => {
       return Promise.reject(new Error(response.statusText));
     })
     .then((result) => {
-      return result.map(data => {
-        $('ul').append(
-          `<li class="eataucation-section">
-          <p class="year">${data.year}<p>
-          <div class="education-detail">
-          <p>${data.title}></p>
-          <p>${data.description}></p>
-          </div>
-          </li>`
-          )})
+      result.map((data) => educations(data));
     });
 };
 getEducationData();
