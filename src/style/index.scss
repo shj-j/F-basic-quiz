@@ -7,6 +7,8 @@
   padding: 0 20px 20px 20px;
   width: 960px;
   background-color: white;
+}
+.head-section {
   text-align: center;
 }
 .image-size {
@@ -18,3 +20,37 @@
 .hello {
   @include font_style(2em, bolder, black);
 }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  .title {
+    @include font_style(15px, bolder, $primary-color)
+  }
+}
+.education-section {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  .year{
+    font-weight: bold;
+  }
+}
+
+.education-detail {
+  margin-left: 70px;
+  background-color: #ededed;
+  width: -webkit-fill-available;
+  p {
+    padding-left: 10px;
+    &:first-child{
+      font-weight: bold;
+      padding-top: 10px;
+    }
+    &:last-child{
+      padding-bottom: 10px;
+    }
+  }
+}
+
+
