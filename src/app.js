@@ -1,4 +1,2 @@
 import "./style/index.scss";
-import GetData from "./component/head";
-
-GetData();
+import "./component/head";
